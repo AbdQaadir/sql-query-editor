@@ -47,6 +47,7 @@ function useFetch({ activeTab, openedTabs }) {
       })
       .then((data) => {
         const results = csvToJSON(data.content);
+
         dispatch({ type: "SUCCESS", payload: results });
 
         // Cache Results in session storage

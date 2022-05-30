@@ -20,6 +20,7 @@ import {
   useGlobalFilter,
   useAsyncDebounce,
 } from "react-table/";
+import ExportData from "../export-data/export-data";
 
 const generatePageSizes = (count) => {
   if (count <= 50) {
@@ -122,26 +123,36 @@ function TableComponent({ headers, data }) {
 
   return (
     <>
-      <Flex w="100%" gap={4} alignItems="flex-end">
-        <GlobalFilter
-          preGlobalFilteredRows={preGlobalFilteredRows}
-          globalFilter={state.globalFilter}
-          setGlobalFilter={setGlobalFilter}
-        />
-        <Select
-          borderColor="blue.400"
-          w="200px"
-          value={pageSize}
-          onChange={(e) => {
-            setPageSize(Number(e.target.value));
-          }}
-        >
-          {generatePageSizes(preGlobalFilteredRows.length).map((pageSize) => (
-            <option key={pageSize} value={pageSize}>
-              Show {pageSize}
-            </option>
-          ))}
-        </Select>
+      <Flex
+        w="100%"
+        gap={4}
+        alignItems="flex-end"
+        justifyContent="space-between"
+      >
+        <Flex gap={4} alignItems="flex-end">
+          <GlobalFilter
+            preGlobalFilteredRows={preGlobalFilteredRows}
+            globalFilter={state.globalFilter}
+            setGlobalFilter={setGlobalFilter}
+          />
+          <Select
+            borderColor="blue.400"
+            w="200px"
+            value={pageSize}
+            onChange={(e) => {
+              setPageSize(Number(e.target.value));
+            }}
+          >
+            {generatePageSizes(preGlobalFilteredRows.length).map((pageSize) => (
+              <option key={pageSize} value={pageSize}>
+                Show {pageSize}
+              </option>
+            ))}
+          </Select>
+        </Flex>
+        <Box px={7}>
+          <ExportData data={data} />
+        </Box>
       </Flex>
       <TableContainer
         mt={2}
