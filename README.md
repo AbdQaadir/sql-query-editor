@@ -8,6 +8,7 @@ This is a dummy project that mimicks how an sql editor functions. It allows user
 2. **Additonal Tab based interface**: This interface is located just above the code editor. It allows users to quickly switch between opened tabs and also be able to close tabs that are no longer useful.
 3. **Rich Code Editor**: This application uses a Monaco Code Editor for better Experience while writing the query.
 4. **Dynamic Rendering of data**: The data being rendered on the table is dynamic. User can search for a particular data and also be able to limit the number of rows to be displayed at once.
+5. **Smooth Data Export Feature**: The user is able to export the table data either in CSV or JSON format.
 
 ## CORE TECHNICAL STACKS
 
