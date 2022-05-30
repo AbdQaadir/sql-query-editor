@@ -38,11 +38,17 @@ function QueryDetails({ activeTab, setActiveTab, openedTabs, setOpenedTabs }) {
         })}
       </Flex>
 
-      <Box mt={3}>
+      <Box mt={3} h="80%">
         {activeTab ? (
           <ActiveQuery activeTab={activeTab} openedTabs={openedTabs} />
         ) : (
-          <></>
+          <>
+            <Flex w="100%" h="100%" alignItems="center" justifyContent="center">
+              <Text>
+                No data to show. Kindly select a table from the navigation menu.
+              </Text>
+            </Flex>
+          </>
         )}
       </Box>
     </Box>
