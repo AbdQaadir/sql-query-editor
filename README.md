@@ -1,5 +1,7 @@
 # PROJECT OVERVIEW
 
+Link: [https://lateef-sql-editor.netlify.app/](https://lateef-sql-editor.netlify.app/)
+
 This is a dummy project that mimicks how an sql editor functions. It allows users to view data on listed tables and also filter the rendered data based on their desired search parameters.
 
 ## FEATURES
