@@ -62,7 +62,7 @@ function GlobalFilter({
     </Box>
   );
 }
-function TableComponent({ headers, data }) {
+function TableComponent({ activeTab, headers, data }) {
   const columns = React.useMemo(
     () => headers.map((item) => ({ Header: item, accessor: item })),
     [headers]
@@ -151,7 +151,7 @@ function TableComponent({ headers, data }) {
           </Select>
         </Flex>
         <Box px={7}>
-          <ExportData data={data} />
+          <ExportData activeTab={activeTab} data={data} />
         </Box>
       </Flex>
       <TableContainer

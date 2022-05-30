@@ -26,7 +26,13 @@ function ActiveQuery({ activeTab, openedTabs }) {
       case "failed":
         return <Text variant="danger">{error}</Text>;
       case "success":
-        return <TableComponent headers={Object.keys(data[0])} data={data} />;
+        return (
+          <TableComponent
+            activeTab={activeTab}
+            headers={Object.keys(data[0])}
+            data={data}
+          />
+        );
       default:
         return <></>;
     }

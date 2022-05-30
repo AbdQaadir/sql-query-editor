@@ -1,14 +1,14 @@
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
-import { ExportToCsv } from "export-to-csv";
+import { ExportToCsv } from "export-to-csv-fix-source-map";
 
-function ExportData({ data }) {
+function ExportData({ activeTab, data }) {
   const ExportAsJson = () => {
     let dataStr = JSON.stringify(data);
     let dataUri =
       "data:application/json;charset=utf-8," + encodeURIComponent(dataStr);
 
-    let exportFileDefaultName = "data.json";
+    let exportFileDefaultName = `${activeTab || "data"}.json`;
 
     let linkElement = document.createElement("a");
     linkElement.setAttribute("href", dataUri);
@@ -23,7 +23,7 @@ function ExportData({ data }) {
       decimalSeparator: ".",
       showLabels: true,
       showTitle: true,
-      title: "data",
+      title: activeTab || "data",
       useTextFile: false,
       useBom: true,
       useKeysAsHeaders: true,
