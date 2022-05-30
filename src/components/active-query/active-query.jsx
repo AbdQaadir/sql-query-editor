@@ -6,7 +6,6 @@ import TableComponent from "../table/table";
 import CodeEditor from "../code-editor/code-editor";
 
 function ActiveQuery({ activeTab, openedTabs }) {
-  console.log({ activeTab });
   const { status, error, data, refetch } = useFetch({ activeTab, openedTabs });
 
   const renderBasedOnStatus = () => {

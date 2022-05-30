@@ -34,7 +34,6 @@ function useFetch({ activeTab, openedTabs }) {
     // Check if the data is already cached.
     const cache = JSON.parse(sessionStorage.getItem("queries") || "{}");
 
-    console.log({ cache });
     if (cache[activeTab] && !isRefetch) {
       dispatch({ type: "SUCCESS", payload: cache[activeTab] });
       return;

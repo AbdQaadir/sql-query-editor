@@ -1,10 +1,44 @@
-# Getting Started with Create React App
+# PROJECT OVERVIEW
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a dummy project that mimicks how an sql editor functions. It allows users to view data on listed tables and also filter the rendered data based on their desired search parameters.
+
+## FEATURES
+
+1. **Sidebar Navigation System:** It has an easy to use sidebar for quick navigations of the whole database table.
+2. **Additonal Tab based interface**: This interface is located just above the code editor. It allows users to quickly switch between opened tabs and also be able to close tabs that are no longer useful.
+3. **Rich Code Editor**: This application uses a Monaco Code Editor for better Experience while writing the query.
+4. **Dynamic Rendering of data**: The data being rendered on the table is dynamic. User can search for a particular data and also be able to limit the number of rows to be displayed at once.
+
+## CORE TECHNICAL STACKS
+
+- JavaScript Framework: [React JS](https://facebook.github.io/create-react-app)
+- UI Component: [Chakra UI](https://chakra-ui.com/)
+- Table: [Tanstack React Table V7](https://react-table-v7.tanstack.com/)
+- Code Editor [Monaco Editor](https://www.npmjs.com/package/@monaco-editor/react)
+
+## PAGE LOAD TIME
+
+The page load time and other metrics were calculated using [https://pagespeed.web.dev/](https://pagespeed.web.dev/) after the project has been deployed through Netlify, and below is the breakdown:\
+
+Speed Index = 0.6s.\
+Time to interactive = 0.6s.\
+Total Blocking Time = 30ms.\
+
+## OPTIMIZATIONS
+
+1. Proper Code Splitting for improved code readability and code bundling.
+2. Use of Self-hosted Open Source fonts using [Font Source](https://fontsource.org/fonts/poppins), thereby eliminating extra (render blocking) network request if CDN had to be used.
+3. Use of custom hook called to optimize the process of fetching the data remotely.
+4. Implemented a cache functionality which is sychronized to the user's sessionStorage. This eliminates multiple api calls on a single query tab.
+5. The table header and body data is being optimized using the \*_useMemo_ hook.
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm install`
+
+Installs the dependencies needed for the app to run.
 
 ### `npm start`
 
@@ -18,53 +52,3 @@ You may also see any lint errors in the console.
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
